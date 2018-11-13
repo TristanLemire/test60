@@ -30,6 +30,7 @@ nav {
     left: 15px;
     overflow: hidden;
     transition: border-radius .3s, height .5s, width .5s, left .5s, bottom .5s ;
+    z-index: 2;
 }
 
 nav.is-open {
