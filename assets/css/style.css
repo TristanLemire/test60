@@ -1,0 +1,381 @@
+/*---------------Base---------------*/
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+@font-face {
+    font-family: "Gotham Book Regular";
+    src: url("../font/Gotham Book Regular.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "Gotham Medium";
+    src: url("../font/Gotham Medium.otf") format("truetype");
+}
+
+/*---------------Start Header---------------*/
+nav {
+    color: white;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    background-color: #333333b7;
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    overflow: hidden;
+    transition: border-radius .3s, height .5s, width .5s, left .5s, bottom .5s ;
+}
+
+nav.is-open {
+    border-radius: 0;
+    height: 100vh;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+}
+
+.menu {
+    background-color: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 15px;
+    left: 15px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: fixed;
+}
+.burger-icon,
+.burger-icon::before,
+.burger-icon::after {
+    width: 30px;
+    height: 4px;
+    background: white;
+}
+.burger-icon::before,
+.burger-icon::after {
+    content: '';
+    display: block;
+    transition: transform 0.3s;
+}
+.burger-icon::before {
+    transform: translateY(-10px);
+}
+.burger-icon::after {
+    transform: translateY(5px);
+}
+
+nav:not(.is-open) ul {
+    transform: scale(0);
+}
+
+.is-open .burger-icon::before{
+    transform-origin: center;
+    transform: rotate(45deg)translate(0px,0px);
+}
+.is-open .burger-icon::after{
+    transform-origin: center;
+    transform: rotate(-45deg) translate(3px,-3px);
+}
+.is-open .burger-icon{
+    background-color: transparent;
+}
+.burger-icon {
+    transition: background-color .3s;
+}
+ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    transition: transform .5s;
+}
+li {
+    line-height: 80px;
+    font-size: 40px;
+}
+
+/*---------------End Header---------------*/
+/*---------------Burger Menu---------------*/
+
+
+/*---------------Burger Menu End---------------*/
+
+/*---------------section home start---------------*/
+
+.home {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.home-container {
+    opacity: 0;
+    transition: 4s;
+    z-index: -1;
+}
+
+.home-container.is-visible {
+    opacity: 1;
+}
+
+.logo {
+    height: 100px;
+    width: 225px;
+    margin: 20px;
+}
+
+.home div {
+    width: 75vw;
+    font-family: "Gotham Book Regular";
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.carotte  {
+    position: absolute;
+    left: -36%;
+    top: 31%;
+    background-size: cover;
+    max-width: 307px;
+    max-height: 164px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.coffee  {
+    position: absolute;
+    left: 65%;
+    top: 18%;
+    background-size: cover;
+    max-width: 91px;
+    max-height: 177px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.fruits  {
+    position: absolute;
+    left: 10%;
+    top: -6%;
+    background-size: cover;
+    max-width: 184px;
+    max-height: 156px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.potiron  {
+    position: absolute;
+    left: 40%;
+    top: 80%;
+    background-size: cover;
+    max-width: 190px;
+    max-height: 151px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/*---------------section home End---------------*/
+/*---------------section story start---------------*/
+
+.story-section {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 70vh;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    background: url(../img/background.jpg) cover;
+}
+
+.story-section article {
+    width: 75%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.1s, transform 1.1s;
+}
+
+.story-section article.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.story-section article div h2 {
+    font-family: "Gotham Medium";
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.story-section article div p  {
+    font-family: "Gotham Book Regular";
+    font-size: 14px;
+    line-height: 25px;
+}
+
+/*---------------section story End---------------*/
+/*---------------section products start---------------*/
+.price {
+    font-size: 15px;
+}
+.products-section img {
+    width: 80%;
+    height: 80%;
+}
+.products-section {
+    position: relative;
+    padding: 20px;
+    font-family: "Gotham Medium";
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: auto;
+    background: white;
+    overflow: hidden;
+    background: linear-gradient(
+            rgba(153, 203, 102, 1),
+            #426040
+    );
+}
+
+.products-container {
+    text-align: center;
+    margin: 10px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.1s, transform 1.1s;
+}
+
+.products-container.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.more {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 40px;
+    margin-top: 5px;
+    border-radius: 20px;
+    background-color: #333333;
+    color: white;
+    box-shadow: 0px 10px 101px 0px rgba(0,0,0,.4);
+    transition: .5s;
+}
+
+.more:hover {
+    background-color: #99CC66;
+    color: #333333;
+}
+/*---------------section products End---------------*/
+/*---------------section products start---------------*/
+
+.articles-section {
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    /* a enlever en ecrant large*/
+}
+
+
+.article1,
+.article2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+
+.article1 {
+    overflow: hidden;
+    width: 100vw;
+    height: 50vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.article2 {
+    overflow: hidden;
+    width: 100vw;
+    height: 50vh;
+}
+
+.article1 h2,
+.article2 h2 {
+    width: 75%;
+    padding-bottom: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.1s, transform 1.1s;
+}
+
+.more-about {
+     justify-content: center;
+     align-items: center;
+     display: flex;
+     height: 40px;
+     margin-top: 5px;
+     border-radius: 20px;
+     background-color: #333333;
+     color: white;
+     padding: 20px;
+     font-family: "Gotham Medium";
+     width: 187px;
+     text-decoration: none;
+     transition: .5s;
+     box-shadow: 0px 10px 101px 0px rgba(0,0,0,.4);
+     opacity: 0;
+     transform: translateY(50px);
+     transition: opacity 1.1s, transform 1.1s;
+}
+
+.more-about:hover {
+    background-color: #99CC66;
+    color: #333333;
+}
+
+.article1.is-visible h2,
+.article2.is-visible h2,
+.article1.is-visible a,
+.article2.is-visible a {
+    opacity: 1;
+    transform: none;
+}
+
+/*---------------section products End---------------*/
+
+#particles-js {
+    position: absolute;
+    width: 100vw;
+    height: 258vh;
+    /*height: 870vh;*/
+
+}
+
